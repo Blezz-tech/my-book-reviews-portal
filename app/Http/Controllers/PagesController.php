@@ -9,7 +9,7 @@ class PagesController extends Controller
 {
     public function home(): RedirectResponse
     {
-        return redirect('books');
+        return redirect('books.index');
     }
 
 

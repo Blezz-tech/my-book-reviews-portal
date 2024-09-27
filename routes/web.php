@@ -6,4 +6,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
 
-Route::get('/books', [BooksController::class, 'index'])->name('books');
+Route::get('/books', [BooksController::class, 'index'])->name('books.index');
