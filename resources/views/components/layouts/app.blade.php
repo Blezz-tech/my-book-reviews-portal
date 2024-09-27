@@ -12,7 +12,7 @@
 <body>
     <x-panels.navbar />
     <div class="container">
-        <main>
+        <main class="my-3">
             {{ $slot }}
         </main>
     </div>
