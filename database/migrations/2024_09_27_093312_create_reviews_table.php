@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
 
             $table->text('description');
-            $table->integer('rating');
+            $table->unsignedTinyInteger('rating');
+            $table->integer('status');
+            $table->date('published_at');
 
             $table->foreignId('user_id')
                 ->constrained()

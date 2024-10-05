@@ -18,9 +18,7 @@ class BookFactory extends Factory
     {
         return [
             "title" => fake()->sentence(5),
-            "description" => fake()->paragraph(5),
-            "status" => fake()->numberBetween(-1, 1),
-            "published_at" => fake()->dateTimeBetween('-2 years', 'now'),
+            "author" => fake()->name(),
         ];
     }
 }

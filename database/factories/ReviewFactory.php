@@ -21,6 +21,8 @@ class ReviewFactory extends Factory
         return [
             'description' => fake()->sentence(6),
             'rating' => fake()->numberBetween(1, 5),
+            "status" => fake()->numberBetween(-1, 1),
+            "published_at" => fake()->dateTimeBetween('-2 years', 'now'),
             'user_id' => User::factory()->create(),
             'book_id' => Book::factory()->create(),
         ];
