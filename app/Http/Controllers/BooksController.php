@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
@@ -11,7 +12,16 @@ class BooksController extends Controller
      */
     public function index()
     {
-        return view('pages.books.index');
+        $books = Book::withCount('reviews')
+            ->withAvg('reviews', 'rating')
+            // ->orderBy('created_at', 'desc')
+            // ->orderBy('reviews_count', 'desc')
+            ->orderBy('reviews_avg_rating', 'desc')
+            ->get();
+
+        return view('pages.books.index', [
+            'books' => $books,
+        ]);
     }
 
     /**

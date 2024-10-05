@@ -45,5 +45,16 @@
             </a>
         </ul>
     </div>
+    <div class="mt-3">
+        @foreach ($books as $book)
+            <p>
+                {{$book->title}} <br>
+                автор {{$book->author}} <br>
+                дата добавления {{$book->created_at}} <br>
+                количество комментариев {{$book->reviews_count}} <br>
+                средний рейтинг {{$book->reviews_avg_rating}}
+            </p>
+        @endforeach
+    </div>
 
 </x-layouts.app>
