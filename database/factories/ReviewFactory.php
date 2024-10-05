@@ -25,6 +25,8 @@ class ReviewFactory extends Factory
             "published_at" => fake()->dateTimeBetween('-2 years', 'now'),
             'user_id' => User::factory()->create(),
             'book_id' => Book::factory()->create(),
+            'created_at' => fake()->dateTimeBetween('-2 years'),
+            'updated_at' => fake()->dateTimeBetween('created_at', 'now'),
         ];
     }
 }
